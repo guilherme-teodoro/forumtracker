@@ -1,4 +1,4 @@
-var promobugs = {
+var promobugsSchema = {
   url: 'http://www.promobugs.com.br/forums/promocoes.4',
   listItemQuery: '.discussionListItem',
   title: { 
@@ -14,4 +14,4 @@ var promobugs = {
   }
 };
 
-module.exports = promobugs;
+module.exports = promobugsSchema;
