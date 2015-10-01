@@ -1,15 +1,13 @@
-var express = require('express');
-var app = express();
+var Agenda = require('agenda');
+var agenda = new Agenda();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+agenda.database('mongodb://guilherme:SUcPlWbkuz37@ds027519.mongolab.com:27519/promo-tracker', 'agendaJobs');
+
+agenda.define('greet the world', function(job, done) {
 });
 
-var port = process.env.PORT || 3000;
+agenda.every('5 seconds', 'greet the world', {time: new Date()});
 
-var server = app.listen(port, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+agenda.start();
 
-  console.log('Example app listening at http://%s:%s', host, port);
-});
+console.log('wait 5 segs');
