@@ -6,8 +6,7 @@ var Promise = require('bluebird');
 
 var promobugsService = {
   getDeals: function() {
-    return Promise(function(resolve, reject) {  
-      console.log('get');
+    return new Promise(function(resolve, reject) {  
       jsdom.env({
         url: promobugs.url, 
         src: [jquery],
@@ -20,7 +19,7 @@ var promobugsService = {
               title: $(this).find(promobugs.title.query).text(),
               link: window.document.location.origin + $(this).find(promobugs.link.query).attr(promobugs.link.attr),
               threadId: $(this).attr('id'),
-              date: $(this).find(promobugs.date.query).attr(promobugs.date.attr)
+              date: new Date($(this).find(promobugs.date.query).attr(promobugs.date.attr))
             });
           });
 

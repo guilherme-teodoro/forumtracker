@@ -23,6 +23,8 @@
     "bluebird": "^2.10.2",
     "express": "^4.13.3",
     "jsdom": "^3.1.2",
-    "mongoose": "^4.1.9"
+    "lodash": "^3.10.1",
+    "mongoose": "^4.1.9",
+    "nodemailer": "^1.5.0"
   }
 }
