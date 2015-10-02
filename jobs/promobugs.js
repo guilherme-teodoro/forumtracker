@@ -41,7 +41,7 @@ var promobugsJob = function(job, done) {
     .then(insertNewThreads)
     .then(sendEmails)
     .then(function(data) {
-      console.log('foi ' + data.length + ' email(s)');
+      console.log('enviou ' + data.length + ' email(s)');
       done();
     })
     .catch(function(err) {
